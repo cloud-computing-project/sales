@@ -13,4 +13,94 @@ import java.util.List;
 
 @ApplicationScoped
 public class SalesBean {
+
+    @Inject
+    private EntityManager em;
+
+    public List<Sale> getSales(UriInfo uriInfo) {
+
+        QueryParameters queryParameters = QueryParameters.query(uriInfo.getRequestUri().getQuery())
+                .defaultOffset(0)
+                .build();
+
+        return JPAUtils.queryEntities(em, Sale.class, queryParameters);
+
+    }
+
+    public Sale getSale(String saleId) {
+
+        Sale sale = em.find(Sale.class, saleId);
+
+        if (sale == null) {
+            throw new NotFoundException();
+        }
+
+        return sale;
+    }
+
+    public Sale createSale(Sale sale) {
+
+        try {
+            beginTx();
+            em.persist(sale);
+            commitTx();
+        } catch (Exception e) {
+            rollbackTx();
+        }
+
+        return sale;
+    }
+
+    public Sale putSale(String saleId, Sale sale) {
+
+        Sale s = em.find(Sale.class, saleId);
+
+        if (s == null) {
+            return null;
+        }
+
+        try {
+            beginTx();
+            sale.setId(s.getId());
+            sale = em.merge(sale);
+            commitTx();
+        } catch (Exception e) {
+            rollbackTx();
+        }
+
+        return sale;
+    }
+
+    public boolean deleteSale(String saleId) {
+
+        Sale sale = em.find(Sale.class, saleId);
+
+        if (sale != null) {
+            try {
+                beginTx();
+                em.remove(sale);
+                commitTx();
+            } catch (Exception e) {
+                rollbackTx();
+            }
+        } else
+            return false;
+
+        return true;
+    }
+
+    private void beginTx() {
+        if (!em.getTransaction().isActive())
+            em.getTransaction().begin();
+    }
+
+    private void commitTx() {
+        if (em.getTransaction().isActive())
+            em.getTransaction().commit();
+    }
+
+    private void rollbackTx() {
+        if (em.getTransaction().isActive())
+            em.getTransaction().rollback();
+    }
 }
