@@ -10,7 +10,7 @@ spec:
         app: sale
     spec:
       containers:
-      - image: bozen/sales:0.01
+      - image: bozen/sales:0.02
         name: sales
         env:
           - name: KUMULUZEE_DISCOVERY_CLUSTER
@@ -22,7 +22,7 @@ spec:
           - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
             value: jdbc:postgresql://postgres-sales:5432/sale
           - name: KUMULUZEE_SERVER_BASEURL
-            value: http://169.51.20.134:30799
+            value: http://169.51.20.134:30406
         ports:
         - containerPort: 8083
           name: server
