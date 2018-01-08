@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>rso.projects</groupId>
-            <artifactId>products-models</artifactId>
+            <artifactId>sales-models</artifactId>
         </dependency>
 
         <dependency>
