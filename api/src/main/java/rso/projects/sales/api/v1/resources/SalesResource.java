@@ -11,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
+import org.eclipse.microprofile.metrics.annotation.Metered;
 
 @ApplicationScoped
 @Path("/sales")
@@ -25,6 +26,7 @@ public class SalesResource {
     private SalesBean salesBean;
 
     @GET
+    @Metered
     public Response getSales() {
 
         List<Sale> sales = salesBean.getSales(uriInfo);

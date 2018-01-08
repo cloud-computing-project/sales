@@ -10,7 +10,7 @@ spec:
         app: sale
     spec:
       containers:
-      - image: bozen/sales:0.02
+      - image: bozen/sales:0.05
         name: sales
         env:
           - name: KUMULUZEE_DISCOVERY_CLUSTER
@@ -27,3 +27,6 @@ spec:
         - containerPort: 8083
           name: server
           protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
