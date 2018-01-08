@@ -13,4 +13,9 @@ docker run -p 8083:8083 bozen/sales
 ```
 
 ## Travis status 
-[![Build Status](https://travis-ci.org/cloud-computing-project/products.svg?branch=master)](https://travis-ci.org/cloud-computing-project/products)
+[![Build Status](https://travis-ci.org/cloud-computing-project/sales.svg?branch=master)](https://travis-ci.org/cloud-computing-project/sales)
+
+
+## Metrics
+
+[Prometheus Operator](https://coreos.com/operators/prometheus/docs/latest/user-guides/getting-started.html)
