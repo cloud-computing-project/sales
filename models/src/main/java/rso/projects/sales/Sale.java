@@ -7,7 +7,7 @@ import java.util.Date;
 @Entity(name = "sales")
 @NamedQueries(value =
         {
-                @NamedQuery(name = "Sale.getAll", query = "SELECT s FROM sales p")
+                @NamedQuery(name = "Sale.getAll", query = "SELECT s FROM sales s")
         })
 @UuidGenerator(name = "idGenerator")
 public class Sale {
