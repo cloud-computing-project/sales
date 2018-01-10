@@ -41,6 +41,7 @@ public class DemoResource {
 
     @POST
     @Path("healthy")
+    @Consumes("application/json")
     public Response setHealth(Boolean healthy) {
         restProperties.setHealthy(healthy);
         return Response.ok().build();
