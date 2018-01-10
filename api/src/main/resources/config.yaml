@@ -28,7 +28,7 @@ kumuluzee:
         - name: sales-endpoint
           url-pattern: /v1/sales/*
 rest-properties:
-  healthy: true
   external-services:
     order-service:
       enabled: true
+  healthy: true
