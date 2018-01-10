@@ -10,7 +10,7 @@ spec:
         app: sale
     spec:
       containers:
-      - image: bozen/sales:0.06
+      - image: bozen/sales:0.07
         name: sales
         env:
           - name: KUMULUZEE_DISCOVERY_CLUSTER
@@ -22,13 +22,7 @@ spec:
           - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
             value: jdbc:postgresql://postgres-sales:5432/sale
           - name: KUMULUZEE_SERVER_BASEURL
-            value: http://169.51.20.134:31324
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: server
-          initialDelaySeconds: 10
-          periodSeconds: 3
+            value: http://169.51.20.134:32384
         ports:
         - containerPort: 8083
           name: server

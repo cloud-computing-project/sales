@@ -20,15 +20,6 @@
 
         <dependency>
             <groupId>com.kumuluz.ee</groupId>
-            <artifactId>kumuluzee-jax-rs-jersey</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.kumuluz.ee.discovery</groupId>
-            <artifactId>kumuluzee-discovery-etcd</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-cdi-weld</artifactId>
         </dependency>
         <dependency>

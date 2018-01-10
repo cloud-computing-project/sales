@@ -19,10 +19,6 @@ kumuluzee:
   discovery:
     etcd:
       hosts: http://192.168.99.100:2379
-  health:
-      checks:
-        data-source-health-check:
-          jndi-name: jdbc/SalesDS
   cors-filter:
     servlet:
       allow-origin: "*"
@@ -31,7 +27,6 @@ kumuluzee:
         - name: sales-endpoint
           url-pattern: /v1/sales/*
 rest-properties:
-  healthy: true
   external-services:
-    product-service:
+    order-service:
       enabled: true
