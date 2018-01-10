@@ -22,7 +22,7 @@ spec:
           - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
             value: jdbc:postgresql://postgres-sales:5432/sale
           - name: KUMULUZEE_SERVER_BASEURL
-            value: http://169.51.20.134:31559
+            value: http://169.51.20.134:32718
         livenessProbe:
           httpGet:
             path: /health
@@ -33,6 +33,3 @@ spec:
         - containerPort: 8083
           name: server
           protocol: TCP
-        resources:
-          limits:
-            cpu: 500m
