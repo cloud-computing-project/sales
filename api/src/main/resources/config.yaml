@@ -62,6 +62,7 @@ kumuluzee:
         - name: sales-endpoint
           url-pattern: /v1/sales/*
 rest-properties:
+  testVar: true
   external-services:
     sale-service:
       enabled: true
