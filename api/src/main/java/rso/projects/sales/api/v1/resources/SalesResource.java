@@ -2,6 +2,7 @@ package rso.projects.sales.api.v1.resources;
 
 import rso.projects.sales.Sale;
 import rso.projects.sales.services.SalesBean;
+import com.kumuluz.ee.logs.cdi.Log;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -17,6 +18,7 @@ import org.eclipse.microprofile.metrics.annotation.Metered;
 @Path("/sales")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@Log
 public class SalesResource {
 
     @Context

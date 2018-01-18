@@ -2,18 +2,23 @@ package rso.projects.sales.api.v1.resources;
 
 import com.kumuluz.ee.common.runtime.EeRuntime;
 import rso.projects.sales.api.v1.configuration.RestProperties;
+import com.kumuluz.ee.logs.cdi.Log;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.logging.Logger;
 
 @Path("demo")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
+@Log
 public class DemoResource {
+
+    private Logger log = Logger.getLogger(DemoResource.class.getName());
 
     @Inject
     private RestProperties restProperties;
@@ -44,6 +49,7 @@ public class DemoResource {
     @Consumes("application/json")
     public Response setHealth(Boolean healthy) {
         restProperties.setHealthy(healthy);
+        log.info("Setting health to " + healthy);
         return Response.ok().build();
     }
 

@@ -1,11 +1,11 @@
 package rso.projects.sales.services.producers;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
+import javax.enterprise.context.ApplicationScoped;
 
 public class PersistenceProducer {
 
@@ -13,7 +13,7 @@ public class PersistenceProducer {
     private EntityManagerFactory emf;
 
     @Produces
-    @RequestScoped
+    @ApplicationScoped
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
