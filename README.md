@@ -9,7 +9,7 @@ docker run -d --name sales -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres
 ## Run application in Docker
 
 ```bash
-docker run -p 8083:8083 bozen/sales
+docker run -p 8091:8091 bozen/sales
 ```
 
 ## Travis status 

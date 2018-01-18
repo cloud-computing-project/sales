@@ -8,8 +8,8 @@ spec:
   type: NodePort
   ports:
   - name: server
-    port: 8083
+    port: 8091
     protocol: TCP
-    targetPort: 8083
+    targetPort: 8091
   selector:
     app: sale

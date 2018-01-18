@@ -10,7 +10,7 @@ spec:
         app: sale
     spec:
       containers:
-      - image: bozen/sales:0.18
+      - image: bozen/sales:0.19
         name: sales
         env:
           - name: KUMULUZEE_DISCOVERY_CLUSTER
@@ -30,6 +30,6 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 3
         ports:
-        - containerPort: 8083
+        - containerPort: 8091
           name: server
           protocol: TCP
