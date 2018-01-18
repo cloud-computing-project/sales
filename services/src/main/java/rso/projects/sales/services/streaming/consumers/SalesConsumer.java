@@ -34,7 +34,7 @@ public class SalesConsumer {
 
         log.info("Status for order " + id + " set to " + status);
 
-        salesBean.setSaleStatus(id,status);
+        // TODO: set sale status
 
     }
 }
