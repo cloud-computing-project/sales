@@ -25,6 +25,10 @@ public class Sale {
         @Column(name = "new_price")
         private String newPrice;
 
+        public String getId() {
+                return id;
+        }
+
         public void setId(String id) {
                 this.id = id;
         }
