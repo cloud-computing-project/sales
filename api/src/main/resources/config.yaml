@@ -63,6 +63,6 @@ kumuluzee:
           url-pattern: /v1/sales/*
 rest-properties:
   external-services:
-    order-service:
+    sale-service:
       enabled: true
   healthy: true
