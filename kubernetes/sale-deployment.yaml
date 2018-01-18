@@ -10,7 +10,7 @@ spec:
         app: sale
     spec:
       containers:
-      - image: bozen/sales:0.14
+      - image: bozen/sales:0.15
         name: sales
         env:
           - name: KUMULUZEE_DISCOVERY_CLUSTER
