@@ -3,6 +3,8 @@ package rso.projects.sales.api.v1.configuration;
 import com.kumuluz.ee.configuration.cdi.ConfigBundle;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.kumuluz.ee.configuration.cdi.ConfigValue;
+
 import javax.enterprise.context.ApplicationScoped;
 
 @ConfigBundle("rest-properties")
@@ -18,5 +20,16 @@ public class RestProperties {
 
     public void setHealthy(boolean healthy) {
         this.healthy = healthy;
+    }
+
+    @ConfigValue(value = "external-services.sale-service.enabled", watch = true)
+    private boolean saleServiceEnabled;
+
+    public boolean isSaleServiceEnabled() {
+        return saleServiceEnabled;
+    }
+
+    public void setSaleServiceEnabled(boolean saleServiceEnabled) {
+        this.saleServiceEnabled = saleServiceEnabled;
     }
 }
