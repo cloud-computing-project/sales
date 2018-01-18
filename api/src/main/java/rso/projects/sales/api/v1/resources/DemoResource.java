@@ -65,6 +65,12 @@ public class DemoResource {
         return restProperties.isSaleServiceEnabled();
     }
 
+    @GET
+    @Path("testVar")
+    public Boolean getTestVariable() {
+        return restProperties.isTest();
+    }
+
     private long fibonacci(int n) {
         if (n <= 1) return n;
         else return fibonacci(n - 1) + fibonacci(n - 2);

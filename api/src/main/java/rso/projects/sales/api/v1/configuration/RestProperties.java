@@ -25,11 +25,22 @@ public class RestProperties {
     @ConfigValue(value = "external-services.sale-service.enabled", watch = true)
     private boolean saleServiceEnabled;
 
+    @ConfigValue(value = "testVar", watch = true)
+    private boolean test;
+
     public boolean isSaleServiceEnabled() {
         return saleServiceEnabled;
     }
 
     public void setSaleServiceEnabled(boolean saleServiceEnabled) {
         this.saleServiceEnabled = saleServiceEnabled;
+    }
+
+    public boolean isTest() {
+        return test;
+    }
+
+    public void setTest(boolean test) {
+        this.test = test;
     }
 }
